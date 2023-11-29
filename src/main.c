@@ -1,22 +1,5 @@
 #include <stdio.h>
-#include <string.h>
-
-typedef struct class_template {
-    const char* class_name;
-    void (*get_cool_name)(struct class_template*, char* msg);
-    const char* (*get_class)(struct class_template*);
-} Class;
-
-void get_cool_name(struct class_template* this, char* msg)
-{
-    printf("get_cool_name() | msh: %s\n", msg);
-}
-
-const char* get_class(struct class_template* this)
-{
-    this->get_cool_name(this, "HELLO WORLD");
-    return this->class_name;
-}
+#include "class_template.h"
 
 int main()
 {
